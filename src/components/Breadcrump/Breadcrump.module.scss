@@ -1,0 +1,31 @@
+@import "../../sass/colors";
+
+.breadcrump {
+  padding: 2rem 1rem;
+  ul {
+    margin: 0 auto;
+    width: fit-content;
+    list-style: none;
+    display: flex;
+    gap: 7px;
+    padding: 0;
+
+    li {
+      display: block;
+      text-align: center;
+      padding: 0.2rem 0.4rem;
+      border-radius: 10%;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $primary-1;
+      }
+
+      &:not(:first-child) {
+        &::before {
+          content: ">";
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}

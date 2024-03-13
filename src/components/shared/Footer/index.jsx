@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div className="bg-dark">
       <div className="container-xxl">
-        <div className="upper py-3 row w-100">
+        <div className="upper py-3 row mx-0 w-100">
           {/* Left Column */}
           <div className="col-12 col-sm-6 d-flex align-items-center gap-3 text-white">
             <img
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         <div className="middle py-3">
-          <div className="row">
+          <div className="row m-0">
             <div className="col-12 col-md-3">
               <h3 className="text-white">About Us</h3>
               <p className="text-white">
@@ -103,7 +103,7 @@ const Footer = () => {
                 Download our app and get extra 15% Discount on your first order.
               </p>
 
-              <div className="d-flex gap-1">
+              <div className="d-flex flex-wrap gap-1">
                 {/* Apple Store */}
                 <div className="px-3 py-1 rounded-1 d-flex gap-1 align-items-center bg-white text-dark">
                   <FaCcApplePay className="footer-upper__icon" />

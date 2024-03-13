@@ -32,7 +32,7 @@ const Header = () => {
     <div className="header py-3">
       <div className="container-xxl text-white">
         {/* Top Header */}
-        <header className="header-top row">
+        <header className="header-top row m-0">
           {/* left text */}
           <div className="col-12 col-sm-8">
             <p className="mb-0">free shipping over 100$ & free returns</p>
@@ -47,10 +47,12 @@ const Header = () => {
 
         <div className="header-options">
           {/* Middle Header */}
-          <header className="header-middle row py-3 align-items-center">
+          <header className="header-middle row m-0 py-3 align-items-center">
             {/* LOGO */}
             <div className="logo-name col-12 mb-3 mb-sm-0 col-sm-2">
-              <h1 className="text-white">Stori</h1>
+              <Link to={"/"} className="text-white">
+                Stori
+              </Link>
             </div>
             {/* end */}
             {/* SEARCH */}
@@ -75,32 +77,40 @@ const Header = () => {
             {/* Options */}
             <div className="d-none header-links col-12 col-sm-4 d-flex align-items-center justify-content-between">
               <div className="icon">
-                <Link className="d-flex align-items-center gap-2">
+                <Link
+                  to={"/compare"}
+                  className="d-flex align-items-center gap-2"
+                >
                   <img src="images/compare.svg" alt="icon-compare" />
                   <p className="mb-0">
                     Compare <br /> Products
                   </p>
                 </Link>
               </div>
+
               <div className="icon">
-                <Link className="d-flex align-items-center gap-2">
+                <Link
+                  to={"/favourites"}
+                  className="d-flex align-items-center gap-2"
+                >
                   <img src="images/wishlist.svg" alt="icon-wishlist" />
                   <p className="mb-0">
                     Favourite <br /> Wishlist
                   </p>
                 </Link>
               </div>
+
               <div className="icon">
-                <Link className="d-flex align-items-center gap-2">
+                <Link to={"/login"} className="d-flex align-items-center gap-2">
                   <img src="images/user.svg" alt="icon-user" />
                   <p className="mb-0">
-                    Login <br /> Wishlist
+                    Login <br /> Account
                   </p>
                 </Link>
               </div>
 
               <div className="icon">
-                <Link className="d-flex align-items-center gap-2">
+                <Link to={"/cart"} className="d-flex align-items-center gap-2">
                   <img src="images/cart.svg" alt="icon-cart" />
                   <div className="header-middle__cart-label">
                     <span className="badge bg-white text-dark d-block">0</span>
@@ -147,13 +157,13 @@ const Header = () => {
                 <NavLink to="/" className={`header-bottom__link`}>
                   Home
                 </NavLink>
-                <NavLink to="/" className={`header-bottom__link`}>
+                <NavLink to="/store" className={`header-bottom__link`}>
                   Our Store
                 </NavLink>
-                <NavLink to="/" className={`header-bottom__link`}>
+                <NavLink to="/blogs" className={`header-bottom__link`}>
                   Blog
                 </NavLink>
-                <NavLink to="/" className={`header-bottom__link`}>
+                <NavLink to="/contact" className={`header-bottom__link`}>
                   Contact
                 </NavLink>
               </div>
@@ -163,7 +173,7 @@ const Header = () => {
         {/* ./header-options */}
 
         {/* Mobile Menu */}
-        <div className="row gap-1 open-with">
+        <div className="row m-0 gap-1 open-with">
           <div
             className="col open-featrues"
             onClick={() => toggleSidebar(setOpenFeatures)}
@@ -196,7 +206,10 @@ const Header = () => {
               <h3 className="text-primary">Features</h3>
               <div className="row">
                 <div className="icon">
-                  <Link className="d-flex align-items-center gap-2">
+                  <Link
+                    to={"/compare"}
+                    className="d-flex align-items-center gap-2"
+                  >
                     <img src="images/compare.svg" alt="icon-compare" />
                     <p className="mb-0">
                       Compare <br /> Products
@@ -204,7 +217,10 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="icon">
-                  <Link className="d-flex align-items-center gap-2">
+                  <Link
+                    to={"/store"}
+                    className="d-flex align-items-center gap-2"
+                  >
                     <img src="images/wishlist.svg" alt="icon-wishlist" />
                     <p className="mb-0">
                       Favourite <br /> Wishlist
@@ -212,7 +228,10 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="icon">
-                  <Link className="d-flex align-items-center gap-2">
+                  <Link
+                    to={"/login"}
+                    className="d-flex align-items-center gap-2"
+                  >
                     <img src="images/user.svg" alt="icon-user" />
                     <p className="mb-0">
                       Login <br /> Wishlist
@@ -220,7 +239,10 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="icon">
-                  <Link className="d-flex align-items-center gap-2">
+                  <Link
+                    to={"/cart"}
+                    className="d-flex align-items-center gap-2"
+                  >
                     <img src="images/cart.svg" alt="icon-cart" />
                     <div className="header-middle__cart-label">
                       <span className="badge bg-white text-dark d-block">

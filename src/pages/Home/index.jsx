@@ -6,13 +6,14 @@ import { banners } from "constants";
 
 // CSS
 import "./Home.scss";
-import { Banner, SBanner } from "components";
-import { featured, sponsers, blogs, categories } from "constants";
+import { Banner, SBanner, SpecialProductsSection } from "components";
+import { featured, sponsers, blogs, categories, mobiles } from "constants";
 import products from "constants/special-products";
 import { ProductCard } from "components/shared";
 import Slider from "react-slick";
 import hero_banners from "constants/hero-banners";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import SpecialCard from "components/SpecialCard";
 
 const Home = () => {
   const arrowStyle = {
@@ -143,6 +144,19 @@ const Home = () => {
         </Marquee>
       </section>
 
+      <h3>Special Products</h3>
+      <section className="special-cards">
+        {mobiles.map((product, id) => (
+          <SpecialCard
+            key={id}
+            image={product.image}
+            category={product.category}
+            title={product.name}
+            description={product.description}
+          />
+        ))}
+      </section>
+
       <section className="newsletter-section">
         <h3>Newsletter Blogs</h3>
 
@@ -169,6 +183,8 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      <SpecialProductsSection />
     </div>
   );
 };

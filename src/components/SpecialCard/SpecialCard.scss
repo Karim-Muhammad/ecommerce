@@ -1,0 +1,45 @@
+.special-card {
+  //   background-color: rgb(25, 25, 25);
+  padding: 10rem 0 0;
+  border-radius: 1rem;
+  position: relative;
+
+  .card-image {
+    img {
+      width: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+  }
+  .card-content {
+    padding: 1.3rem;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .card-category {
+      display: block;
+      margin: 1rem 0;
+      color: var(--color-bf4800);
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--color-232f3e);
+      margin: 1rem 0;
+    }
+    .card-description {
+      font-size: 0.9rem;
+      color: var(--color-232f3e);
+    }
+  }
+
+  &:first-child {
+    background-color: #ebc0c0;
+    * {
+      color: aliceblue;
+    }
+  }
+}
