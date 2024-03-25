@@ -1,0 +1,92 @@
+@import "/src/sass/colors.scss";
+
+.grid1-products {
+}
+
+.grid2-products {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.grid3-products {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+// @for $i from 1 to 4 {
+//   .grid-products-#{i} {
+//     display: flex;
+//     flex-wrap: wrap;
+
+//     & > div {
+//       width: calc(97% / $i);
+//     }
+//   }
+// }
+
+.block-bottom {
+  .grid-products {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > div {
+      background-color: #fff;
+      margin: 1rem 0;
+      padding: 2rem 1rem;
+    }
+
+    &-1 {
+      & > div {
+        img {
+          width: fit-content !important;
+          object-fit: contain !important;
+        }
+        display: flex;
+        flex-grow: 1;
+        gap: 1rem;
+        width: calc(95% / 1);
+      }
+    }
+
+    &-2 {
+      gap: calc(5% / (2 - 1));
+      & > div {
+        width: calc(95% / 2);
+      }
+    }
+
+    &-3 {
+      gap: calc(5% / (3 - 1));
+      & > div {
+        width: calc(95% / 3);
+      }
+    }
+
+    &-4 {
+      gap: calc(5% / (4 - 1));
+      & > div {
+        width: calc(95% / 4);
+      }
+    }
+
+    @media (max-width: 1280px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+      & > div {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 960px) {
+      & > div {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+}

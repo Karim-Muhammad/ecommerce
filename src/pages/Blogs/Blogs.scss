@@ -1,0 +1,32 @@
+.blogs {
+  .blogs-content {
+    display: flex;
+    gap: 1rem;
+
+    .left-side-content {
+      .card {
+        padding: 1rem;
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        ul li {
+          margin: 0.5rem 0;
+          transition: all 0.2s;
+
+          cursor: pointer;
+
+          &:hover {
+            color: var(--color-febd69);
+          }
+        }
+      }
+    }
+
+    .right-side-content {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+  }
+}

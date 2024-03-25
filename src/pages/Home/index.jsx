@@ -1,19 +1,30 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import Slider from "react-slick";
 
 // Constants
-import { banners } from "constants";
+import {
+  featured,
+  sponsers,
+  blogs,
+  categories,
+  mobiles,
+  products,
+  hero_banners,
+  banners,
+} from "constants";
+
+// Components
+import { Banner, SBanner, SpecialCard } from "components";
+import Product3 from "components/shared/Products/Product3";
+
+import { Grid2Products, Grid3Products } from "components/shared";
+
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import Product1 from "components/shared/Products/Product1";
 
 // CSS
 import "./Home.scss";
-import { Banner, SBanner, SpecialProductsSection } from "components";
-import { featured, sponsers, blogs, categories, mobiles } from "constants";
-import products from "constants/special-products";
-import { ProductCard } from "components/shared";
-import Slider from "react-slick";
-import hero_banners from "constants/hero-banners";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import SpecialCard from "components/SpecialCard";
 
 const Home = () => {
   const arrowStyle = {
@@ -177,14 +188,12 @@ const Home = () => {
       </section>
 
       <section className="special-collection">
-        <div className="special-products">
-          {products.map((product, id) => (
-            <ProductCard key={id} {...product} />
-          ))}
-        </div>
+        <Grid2Products products={products} Card={Product1} />
       </section>
 
-      <SpecialProductsSection />
+      <div className="special-products">
+        <Grid3Products products={products} Card={Product3} />
+      </div>
     </div>
   );
 };

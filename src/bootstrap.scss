@@ -7,6 +7,13 @@ $danger: #ff0000;
 $light: #f8f9fa;
 $dark: #343a40;
 
+@for $i from 1 through 12 {
+  .w-rem#{$i} {
+    // use rem
+    width: #{$i}rem;
+  }
+}
+
 // Required
 @import "~bootstrap/scss/bootstrap";
 

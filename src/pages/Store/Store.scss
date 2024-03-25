@@ -110,10 +110,12 @@
           }
         }
       }
+
       .store-right-side {
+        height: 100%;
         flex: 0 0 calc(100% - 1rem - 300px);
 
-        & > div {
+        & > div:first-child {
           margin: 1rem 0;
           background-color: #fff;
         }
@@ -139,6 +141,7 @@
           }
 
           .right-side {
+            height: 100%;
             display: flex;
             gap: 10px;
             align-items: center;
@@ -156,8 +159,24 @@
                   color: #000;
                 }
               }
+
+              @media (max-width: 1280px) {
+                display: none;
+              }
+            }
+
+            .grids-icon {
+              width: 25px;
+              height: 25px;
+              padding: 4px;
+              border-radius: 0.4rem;
+
+              background-color: var(--color-ededed);
             }
           }
+        }
+
+        .block-bottom {
         }
       }
     }

@@ -1,19 +1,25 @@
-import Breadcrump from "components/Breadcrump";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import "./Store.scss";
 import Rating from "react-rating";
-import {
-  BsFillGrid1X2Fill,
-  BsFillGrid3X3GapFill,
-  BsFillGridFill,
-  BsStar,
-  BsStarFill,
-} from "react-icons/bs";
+import { BsStar, BsStarFill } from "react-icons/bs";
 import { FaCaretDown } from "react-icons/fa";
+
+// Grid icons
+import grid1 from "./../../../src/images/gr.svg";
+import grid2 from "./../../../src/images/gr2.svg";
+import grid3 from "./../../../src/images/gr3.svg";
+import grid4 from "./../../../src/images/gr4.svg";
+
+import { products } from "constants";
+import { Product1, Grid2Products, GridProducts } from "components/shared";
+import Breadcrump from "components/Breadcrump";
+
+// CSS
+import "./Store.scss";
+
 const Store = () => {
   const [filterSort, setFilterSort] = useState(false);
+  const [grid, setGrid] = useState(4); // number of in grid
 
   return (
     <div className={"store"}>
@@ -176,33 +182,44 @@ const Store = () => {
               </div>
             </div>
           </div>
+
           <div className="store-right-side">
             <div className="block block-up">
               <div className="left-side">
                 Sort By :{" "}
                 <select name="sort" id="sort">
-                  <option value="newest">Newest</option>
-                  <option value="price">Price</option>
-                  <option value="popularity">Popularity</option>
+                  {["Newest", "Price: Low to High", "Price: High to Low"].map(
+                    (opt) => {
+                      return <option key={opt}>{opt}</option>;
+                    }
+                  )}
                 </select>
               </div>
               <div className="right-side">
                 <h6 className="text-mute">Showing 1-9 of 20 results</h6>
                 <div className="view-mode">
                   <ul>
-                    <li>
-                      <BsFillGridFill />
-                    </li>
-                    <li>
-                      <BsFillGrid3X3GapFill />
-                    </li>
-                    <li>
-                      <BsFillGrid1X2Fill />
-                    </li>
+                    {[
+                      { img: grid4, text: "4" },
+                      { img: grid3, text: "3" },
+                      { img: grid2, text: "2" },
+                      { img: grid1, text: "1" },
+                    ].map((gr) => {
+                      return (
+                        <li
+                          className={`${
+                            grid === +gr.text ? "bg-dark" : "bg-white"
+                          }`}
+                          key={gr.text}
+                          onClick={() => setGrid(gr.text)}
+                        >
+                          <img className="grids-icon" src={gr.img} alt="" />
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
-
               {/* Mobile filter, sort */}
               <div className="mb-left-side">
                 <button className="btn menu-btn">
@@ -210,7 +227,9 @@ const Store = () => {
                 </button>
               </div>
             </div>
-            <div className="block block-bottom"></div>
+            <div className="block block-bottom">
+              <GridProducts products={products} Card={Product1} num={grid} />
+            </div>
           </div>
         </div>
       </div>

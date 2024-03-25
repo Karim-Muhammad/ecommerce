@@ -122,6 +122,12 @@
   }
 }
 
+.special-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
 .newsletter-section {
   .blogs {
     display: grid;
@@ -160,113 +166,4 @@
 }
 
 .special-collection {
-  .special-products {
-    display: grid;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 2rem 0;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  .product-card {
-    position: relative;
-    overflow: hidden;
-
-    .product-image {
-      img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-    }
-
-    .product-content {
-      display: flex;
-      flex-direction: column;
-      // align-items: stretch;
-      // justify-content: space-between;
-      .product-rate {
-        font-size: 1.5rem !important;
-      }
-      .product-category {
-        display: block;
-        margin: 1rem 0;
-        color: var(--color-bf4800);
-        text-transform: uppercase;
-      }
-
-      .product-title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        font-size: 1rem;
-        text-overflow: ellipsis;
-      }
-
-      .product-discount {
-        position: absolute;
-        top: 10px;
-        right: 30px;
-
-        background-color: var(--color-sale);
-        color: white;
-        padding: 0.2rem 0.4rem;
-
-        &::before {
-          content: "-";
-        }
-
-        &::after {
-          content: "%";
-        }
-      }
-
-      .product-price {
-        // margin-bottom: auto;
-      }
-    }
-
-    .product-options {
-      position: absolute;
-      top: 0;
-      right: -100%;
-
-      border-top-left-radius: 1rem;
-      border-bottom-left-radius: 1rem;
-      width: fit-content;
-      height: fit-content;
-      padding: 1rem;
-      transition: 0.2s ease;
-
-      background-color: aliceblue;
-
-      & > * {
-        cursor: pointer;
-
-        font-size: 1.3rem;
-        border-radius: 100%;
-        transition: 0.3s ease;
-
-        &:hover {
-          transform: scale(1.5);
-          // background-color: black;
-          color: var(--color-febd69);
-        }
-      }
-    }
-
-    &:hover {
-      .product-options {
-        right: 0;
-      }
-    }
-  }
-}
-
-.special-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
 }
