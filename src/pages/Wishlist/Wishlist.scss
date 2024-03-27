@@ -1,0 +1,12 @@
+.wishlist-products {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    & > div {
+      width: 300px;
+      flex-grow: 0;
+    }
+  }
+}

@@ -1,17 +1,20 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 // Partials
-import {Header, Footer} from 'components/shared';
+import { Header, Footer } from "components/shared";
 
+import "./Layout.scss";
 const Layout = () => {
   return (
-    <>
-        <Header />
+    <div className="layout">
+      <Header />
+      <div className="my-5 ">
         <Outlet />
-        <Footer />
-    </>
-  )
-}
+      </div>
+      <Footer />
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

@@ -1,0 +1,71 @@
+.pg-register {
+  .register-content {
+    .container-xxl {
+      .auth-card {
+        min-width: 350px;
+        width: 50%;
+        margin: 0 auto;
+
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        padding: 1rem 3rem;
+        border-radius: 10px;
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          text-align: center;
+          margin: 1.3rem 0;
+        }
+
+        .form-control {
+          border-radius: 0.5rem;
+          overflow: hidden;
+          padding: 0;
+          margin: 1rem 0;
+          input {
+            width: 100%;
+            padding: 0.7rem;
+            border: none;
+            background-color: #f3f5f2;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+
+        .buttons {
+          padding: 1rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          & > * {
+            flex-basis: calc(60% / 2);
+            padding: 0.7rem;
+            border: none;
+            background-color: var(--color-3b4349);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            cursor: pointer;
+
+            &:not(.active) {
+              text-align: right;
+            }
+
+            &.active {
+              background-color: var(--color-3b4349);
+              color: #fff;
+
+              &:hover {
+                background-color: var(--color-febd69);
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

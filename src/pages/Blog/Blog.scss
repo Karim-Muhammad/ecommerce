@@ -1,0 +1,115 @@
+.pg-blog {
+  .pg-content {
+    .blog-content {
+      display: flex;
+      gap: 1rem;
+
+      .left-side-content {
+        .card {
+          padding: 1rem;
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          ul li {
+            margin: 0.5rem 0;
+            transition: all 0.2s;
+
+            cursor: pointer;
+
+            &:hover {
+              color: var(--color-febd69);
+            }
+          }
+        }
+      }
+
+      .right-side-content {
+        .blog {
+          &-cover {
+            img {
+              width: 100%;
+            }
+          }
+
+          &-content {
+            padding: 1rem;
+
+            p {
+              &::first-letter {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: var(--color-febd69);
+                margin-right: 0.5rem;
+              }
+            }
+          }
+
+          &-info {
+            font-size: 0.9rem;
+
+            border-bottom: 1px solid #ccc;
+          }
+
+          &-action-links {
+            margin: 1rem 0;
+
+            .left-links {
+            }
+            .right-links {
+              display: flex;
+              gap: 1rem;
+            }
+          }
+
+          &-comment {
+            .comment-form {
+              form {
+                width: 100%;
+                padding: 1rem;
+                margin: 2rem 0;
+                background-color: #fff;
+
+                input,
+                textarea {
+                  margin: 1rem 0s;
+                  background-color: var(--color-f3f5f2);
+                  padding: 0.7rem;
+                  border: none;
+                  &:focus {
+                    border: none;
+                    outline: none;
+
+                    &::placeholder {
+                      transform: scale(0.9) translateY(-1rem);
+                    }
+                  }
+
+                  &::placeholder {
+                    transition: all 0.3s;
+                    color: var(--color-4d5860);
+                    font-size: 0.85rem;
+                  }
+                }
+
+                .form-group:not(:last-child) {
+                  display: flex;
+                  gap: 5%;
+                  margin-bottom: 1rem;
+
+                  input {
+                    flex-basis: calc(97% / 2);
+                  }
+                }
+
+                button {
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
