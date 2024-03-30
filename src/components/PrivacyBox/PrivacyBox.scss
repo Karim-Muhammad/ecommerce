@@ -1,0 +1,87 @@
+.privacy-box {
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  .privacy-title {
+    padding: 1rem 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      transform: rotate(-90deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .privacy-description {
+    padding: 0;
+    margin: 0;
+    height: 0px;
+    margin-left: 1rem;
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &.show {
+    padding: 1rem 2rem;
+
+    // .privacy-title {
+    //   .icon {
+    //     transform: rotate(0deg);
+    //   }
+    // }
+
+    // .privacy-description {
+    //   height: auto;
+    // }
+
+    .privacy-title {
+      animation-name: titleAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      .icon {
+        transform: rotate(0deg);
+      }
+    }
+
+    .privacy-description {
+      animation-name: descriptionAnimation;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    padding: 0;
+  }
+
+  100% {
+    padding: 1rem 2rem;
+  }
+}
+
+@keyframes descriptionAnimation {
+  0% {
+    height: 0px;
+    padding: 0;
+  }
+
+  100% {
+    height: auto;
+    padding: 1rem 2rem;
+  }
+}

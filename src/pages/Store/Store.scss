@@ -47,24 +47,6 @@
             }
           }
           .filter-by-colors {
-            .colors {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 10px;
-              margin-bottom: 20px;
-              .circle {
-                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
-                cursor: pointer;
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                transition: all 0.3s ease-in-out;
-                &:hover {
-                  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-                  transform: scale(1.1) translate(0, -5px);
-                }
-              }
-            }
           }
         }
 

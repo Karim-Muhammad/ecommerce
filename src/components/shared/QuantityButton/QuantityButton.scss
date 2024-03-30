@@ -1,0 +1,19 @@
+.input-quantity {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5rem;
+
+  span {
+    cursor: pointer;
+  }
+
+  input {
+    width: 50px;
+    border: none;
+    text-align: center;
+  }
+}

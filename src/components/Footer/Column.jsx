@@ -8,7 +8,11 @@ const Column = ({ title, links }) => {
       <ul className="list-unstyled">
         {links.map((link) => (
           <li>
-            <Link to="" key={link} className="mt-1 text-white d-block">
+            <Link
+              to={link.toLowerCase().split(" ").join("-")}
+              key={link}
+              className="mt-1 text-white d-block"
+            >
               {link}
             </Link>
           </li>

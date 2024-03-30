@@ -16,6 +16,7 @@ import Breadcrump from "components/Breadcrump";
 
 // CSS
 import "./Store.scss";
+import Color from "components/shared/Color";
 
 const Store = () => {
   const [filterSort, setFilterSort] = useState(false);
@@ -101,11 +102,7 @@ const Store = () => {
                     "gray",
                     "pink",
                   ].map((color, index) => (
-                    <div
-                      key={index}
-                      className={`circle`}
-                      style={{ backgroundColor: color }}
-                    ></div>
+                    <Color color={color} key={index} />
                   ))}
                 </div>
               </div>
