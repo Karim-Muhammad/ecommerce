@@ -24,6 +24,7 @@ import TermsCondition from "pages/TermsCondition";
 import ShippingPolicy from "pages/ShippingPolicy";
 import Product from "pages/Product";
 import Cart from "pages/Cart";
+import Checkout from "pages/Checkout";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/terms-and-conditions" element={<TermsCondition />} />
             <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<h1>Not Found</h1>} />
           </Route>

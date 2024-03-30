@@ -1,10 +1,12 @@
+import React, { useState } from "react";
+import { BsTrash } from "react-icons/bs";
 import { Breadcrump } from "components";
 import { Color, QuantityButton } from "components/shared";
-import React from "react";
-import { BsTrash } from "react-icons/bs";
 
 import "./Cart.scss";
+import { Link } from "react-router-dom";
 const Cart = () => {
+  const [total, setTotal] = useState(0);
   return (
     <div className="pg-cart">
       <div className="breadcrump">
@@ -142,6 +144,39 @@ const Cart = () => {
                 </tr>
               </tbody>
             </table>
+
+            <div className="buttons-actions">
+              <div className="btn btn-dark text-white rounded-5 px-5 py-3">
+                Continue Shopping
+              </div>
+            </div>
+
+            <div className="cart-summary py-3">
+              <h2>Cart Summary</h2>
+
+              <div className="summary">
+                <div className="d-flex justify-content-between">
+                  <p>Subtotal</p>
+                  <p>$900</p>
+                </div>
+
+                <div className="d-flex justify-content-between">
+                  <p>Shipping</p>
+                  <p>Free</p>
+                </div>
+
+                <div className="d-flex justify-content-between">
+                  <p>Total</p>
+                  <p>$900</p>
+                </div>
+              </div>
+
+              <div className="checkout-btn">
+                <div className="btn btn-dark text-white rounded-5 px-5 py-3 btn-checkout">
+                  <Link to="/checkout">Checkout</Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

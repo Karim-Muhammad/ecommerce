@@ -60,3 +60,25 @@ ul {
     // you can customize color of ./productDetails.jsx than filter colors in /Store.jsx
   }
 }
+
+.section-title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+
+  &::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    width: 70%;
+    height: 1px;
+    background-color: #bebebe;
+  }
+
+  // &::first-letter {
+  //   text-transform: uppercase;
+  //   font-size: 1.5rem;
+  //   margin-right: 0.5rem;
+  // }
+}
