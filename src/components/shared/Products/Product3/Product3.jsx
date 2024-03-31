@@ -4,6 +4,7 @@ import { BsHeart, BsHeartFill, BsStar, BsStarFill } from "react-icons/bs";
 import { Countdown } from "components/shared";
 
 import "./Product3.scss";
+import { Link } from "react-router-dom";
 export default function Product3({ product }) {
   const [love, setLove] = React.useState(false);
 
@@ -47,10 +48,9 @@ export default function Product3({ product }) {
         </div>
         <div className="product-content">
           <h5 className="product-category">{product.category}</h5>
-          <h3 className="product-title">{`${product.name.substring(
-            0,
-            10
-          )}...`}</h3>
+          <h3 className="product-title">
+            <Link to="/product/1">{`${product.name.substring(0, 10)}...`}</Link>
+          </h3>
           <div className="product-rate">
             <Rating
               start={1}

@@ -30,8 +30,8 @@ const Contact = () => {
             ></iframe>
           </div>
           {/* ./block-up */}
-          <div className="block block-down">
-            <div className="form-section bg-white">
+          <div className="block block-down bg-white">
+            <div className="form-section">
               <div className="left-form">
                 <h3>Contact Us</h3>
                 <form>

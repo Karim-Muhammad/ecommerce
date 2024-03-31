@@ -8,6 +8,7 @@ import {
   BsStarFill,
 } from "react-icons/bs";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 import "./ProductCard.scss";
 
@@ -23,7 +24,9 @@ const Product1 = ({ product }) => {
       </div>
       <div className="product-content">
         <strong className="product-category">{product.category}</strong>
-        <h3 className="product-title">{product.name}</h3>
+        <h3 className="product-title">
+          <Link to="/product/1">{product.name}</Link>
+        </h3>
         <p className="product-price text-muted">{price}</p>
         <div className="product-rate">
           <Rating
@@ -39,16 +42,24 @@ const Product1 = ({ product }) => {
 
       <div className="product-options">
         <div className="product-add-cart">
-          <BsCart />
+          <Link to="/cart">
+            <BsCart />
+          </Link>
         </div>
         <div className="product-compare">
-          <BsArrowDownUp />
+          <Link to="/compare-products">
+            <BsArrowDownUp />
+          </Link>
         </div>
         <div className="product wishlist">
-          <BsFillSuitHeartFill />
+          <Link to="/wishlist">
+            <BsFillSuitHeartFill />
+          </Link>
         </div>
         <div className="product-preview">
-          <BsEye />
+          <Link to="/product/1">
+            <BsEye />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { blogs } from "constants";
+import { Link } from "react-router-dom";
 
 const NewsletterSection = () => {
   return (
@@ -14,7 +15,9 @@ const NewsletterSection = () => {
             </div>
             <div className="blog-content">
               <p className="small text-muted ">{blog.date}</p>
-              <h3 className="">{blog.title}</h3>
+              <Link to="/blog/1">
+                <h3 className="">{blog.title}</h3>
+              </Link>
               <p className="text-body text-muted ">{blog.text}</p>
             </div>
           </div>

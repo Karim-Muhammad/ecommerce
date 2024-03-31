@@ -54,7 +54,7 @@ const BannerSection = () => {
                       big_title: banner.small_title,
                       small_title: banner.big_title,
                       description: banner.description,
-                      link: "/products",
+                      link: "/store",
                       className: "each-slide-effect",
                     }}
                   />

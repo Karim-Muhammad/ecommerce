@@ -5,10 +5,14 @@
   position: relative;
 
   .card-image {
-    img {
-      width: 100%;
-      object-fit: cover;
-      mix-blend-mode: multiply;
+    a {
+      display: block;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+      }
     }
   }
   .card-content {

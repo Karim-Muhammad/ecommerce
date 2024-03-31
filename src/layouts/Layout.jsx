@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 // Partials
@@ -6,6 +6,9 @@ import { Header, Footer } from "components/shared";
 
 import "./Layout.scss";
 const Layout = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className="layout">
       <Header />

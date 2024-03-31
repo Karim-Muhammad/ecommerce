@@ -1,6 +1,8 @@
 @import "/src/sass/colors.scss";
 
 .product {
+  background-color: white;
+  padding: 1rem;
   display: flex;
 
   & > div {

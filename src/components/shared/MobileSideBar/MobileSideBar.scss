@@ -1,0 +1,55 @@
+.sidebar {
+  position: fixed;
+  transform: translate(-100%);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--color-131921);
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+
+  &.show {
+    transform: translate(0);
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    color: white;
+    font-size: 2.5rem;
+    background-color: transparent;
+    width: 30px;
+  }
+
+  .sidebar-head {
+    img {
+      // width: 100%;
+      height: 50%;
+      background-size: cover;
+    }
+  }
+
+  .sidebar-body {
+    padding: 1.5rem 1rem;
+
+    .header-middle {
+      .logo-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+
+    .header-links {
+      flex-direction: column;
+    }
+
+    .header-bottom {
+      & > div.header-bottom-links {
+        flex-direction: column;
+      }
+    }
+  }
+}

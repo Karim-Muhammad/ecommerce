@@ -9,23 +9,22 @@ import {
   BsPlusCircle,
   BsSearch,
 } from "react-icons/bs";
+import { LuMenu } from "react-icons/lu";
+
+// Modals
+import ModelSidebar from "components/Modals/Sidebar";
 
 // CSS
 import "./Header.scss";
+
+import MobileSideBar from "../MobileSideBar";
 const Header = () => {
-  const [openFeatures, setOpenFeatures] = useState(false);
-  const [openCategories, setOpenCategories] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  let showSidebar = openMenu ? "show" : "";
 
-  let showSidebar = openCategories || openFeatures ? "show" : "";
-
-  const toggleSidebar = (dispatch) => {
-    showSidebar = !showSidebar;
-    dispatch(true);
-  };
-
-  const closeSidebar = () => {
-    setOpenFeatures(false);
-    setOpenCategories(false);
+  console.log("showSidebar", showSidebar);
+  const toggleSidebar = () => {
+    setOpenMenu((prev) => !prev);
   };
 
   return (
@@ -44,19 +43,24 @@ const Header = () => {
             </div>
           </div>
         </header>
-
         <div className="header-options">
           {/* Middle Header */}
           <header className="header-middle row m-0 py-3 align-items-center">
             {/* LOGO */}
-            <div className="logo-name col-12 mb-3 mb-sm-0 col-sm-2">
+            <div className="logo-name col-lg-2 d-flex d-sm-block justify-content-between mb-3">
               <Link to={"/"} className="text-white">
                 Stori
               </Link>
+
+              <div
+                className="menu-toggle btn btn-dark text-white d-sm-none"
+                onClick={toggleSidebar}
+              >
+                <LuMenu className="" />
+              </div>
             </div>
-            {/* end */}
             {/* SEARCH */}
-            <div className="header-search col-12 mb-5 mb-sm-0 col-sm-6">
+            <div className="header-search col-md-4 flex-grow-1 mb-sm-0">
               <div class="input-group">
                 <input
                   type="text"
@@ -73,12 +77,11 @@ const Header = () => {
                 </span>
               </div>
             </div>
-            {/* end */}
             {/* Options */}
-            <div className="d-none header-links col-12 col-sm-4 d-flex align-items-center justify-content-between">
+            <div className="d-none header-links col-md-4 flex-grow-1 d-sm-flex flex-wrap align-items-center justify-content-between">
               <div className="icon">
                 <Link
-                  to={"/compare"}
+                  to={"/compare-products"}
                   className="d-flex align-items-center gap-2"
                 >
                   <img src="images/compare.svg" alt="icon-compare" />
@@ -90,7 +93,7 @@ const Header = () => {
 
               <div className="icon">
                 <Link
-                  to={"/favourites"}
+                  to={"/wishlist"}
                   className="d-flex align-items-center gap-2"
                 >
                   <img src="images/wishlist.svg" alt="icon-wishlist" />
@@ -119,10 +122,9 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-            {/* end */}
           </header>
           {/* Bottom Header */}
-          <header className="d-none header-bottom py-3">
+          <header className="d-none header-bottom d-sm-block">
             <div className="d-flex gap-3 align-items-center">
               <div class="dropdown header-dropdown border border-white py-1 px-2 rounded-2">
                 <button
@@ -170,146 +172,13 @@ const Header = () => {
             </div>
           </header>
         </div>
-        {/* ./header-options */}
 
-        {/* Mobile Menu */}
-        <div className="row m-0 gap-1 open-with">
-          <div
-            className="col open-featrues"
-            onClick={() => toggleSidebar(setOpenFeatures)}
-          >
-            <BsPlusCircle /> Open Features
-          </div>
-
-          <div
-            className="col open-categories"
-            onClick={() => toggleSidebar(setOpenCategories)}
-          >
-            <BsPlusCircle /> Open Categories
-          </div>
-        </div>
-
-        <nav className={`${showSidebar} sidebar`}>
-          <div className="close">
-            <div className="close-btn" onClick={() => closeSidebar()}>
-              <BsDash />
-            </div>
-          </div>
-          {/* Sidebar Header */}
-          <div className="sidebar-head">
-            <img src="images/stori.png" alt="logo" />
-          </div>
-
-          {/* Sidebar Body */}
-          <div className="sidebar-body">
-            <div className={`${!openFeatures && "d-none"} features`}>
-              <h3 className="text-primary">Features</h3>
-              <div className="row">
-                <div className="icon">
-                  <Link
-                    to={"/compare"}
-                    className="d-flex align-items-center gap-2"
-                  >
-                    <img src="images/compare.svg" alt="icon-compare" />
-                    <p className="mb-0">
-                      Compare <br /> Products
-                    </p>
-                  </Link>
-                </div>
-                <div className="icon">
-                  <Link
-                    to={"/store"}
-                    className="d-flex align-items-center gap-2"
-                  >
-                    <img src="images/wishlist.svg" alt="icon-wishlist" />
-                    <p className="mb-0">
-                      Favourite <br /> Wishlist
-                    </p>
-                  </Link>
-                </div>
-                <div className="icon">
-                  <Link
-                    to={"/login"}
-                    className="d-flex align-items-center gap-2"
-                  >
-                    <img src="images/user.svg" alt="icon-user" />
-                    <p className="mb-0">
-                      Login <br /> Wishlist
-                    </p>
-                  </Link>
-                </div>
-                <div className="icon">
-                  <Link
-                    to={"/cart"}
-                    className="d-flex align-items-center gap-2"
-                  >
-                    <img src="images/cart.svg" alt="icon-cart" />
-                    <div className="header-middle__cart-label">
-                      <span className="badge bg-white text-dark d-block">
-                        0
-                      </span>
-                      <p className="mb-0">$ 500</p>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${!openCategories && "d-none"} categories`}>
-              <div className="gap-7 align-items-center">
-                <div class="dropdown header-bottom__dropdown border border-white py-1 px-2 mb-3 rounded-2">
-                  <button
-                    class="text-white header-menu btn btn-secondary dropdown-toggle bg-transparent border-0"
-                    type="button"
-                    id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown button
-                  </button>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton1"
-                  >
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="d-flex flex-column  align-items-center gap-3 header-links">
-                  <NavLink to="/" className={`header-bottom__link`}>
-                    Home
-                  </NavLink>
-                  <NavLink to="/" className={`header-bottom__link`}>
-                    Our Store
-                  </NavLink>
-                  <NavLink to="/" className={`header-bottom__link`}>
-                    Blog
-                  </NavLink>
-                  <NavLink to="/" className={`header-bottom__link`}>
-                    Contact
-                  </NavLink>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Sidebar Bottom */}
-          <div className="sidebar-foot"></div>
-        </nav>
-        {/* <NavSidebar /> */}
+        {/* Mobile Sidebar */}
+        <ModelSidebar
+          showSidebar={showSidebar}
+          Component={MobileSideBar}
+          toggleSidebar={toggleSidebar}
+        />
       </div>
     </div>
   );

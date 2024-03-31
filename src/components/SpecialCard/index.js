@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./SpecialCard.scss";
 const SpecialCard = (props) => {
   return (
     <div className="special-card">
       <div className="card-image">
-        <img src={props.image} alt={props.title} />
+        <Link to="/product/1">
+          <img src={props.image} alt={props.title} />
+        </Link>
       </div>
       <div className="card-content">
         <h5 className="card-category">{props.category}</h5>

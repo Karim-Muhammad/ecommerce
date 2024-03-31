@@ -12,7 +12,7 @@ const Blog = ({ blog }) => {
         <span className="blog-date">{blog.date}</span>
         <h4 className="blog-title">{blog.title}</h4>
         <p className="blog-text">{blog.text}</p>
-        <Link className="btn btn-dark blog-link" to="/">
+        <Link className="btn btn-dark blog-link" to="/blog/1">
           Read more
         </Link>
       </div>
