@@ -54,7 +54,7 @@
         flex-grow: 1;
 
         .banner-text {
-          font-size: 0.8rem !important;
+          font-size: 0.8em !important;
 
           h4 {
             font-size: 1.2em !important;
@@ -67,6 +67,13 @@
           p {
             font-size: 1.3em !important;
           }
+
+          @media screen and (max-width: 768px) {
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          flex-basis: 100%;
         }
       }
     }
@@ -123,23 +130,10 @@
 }
 
 .special-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
 }
 
 .newsletter-section {
   .blogs {
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-
-    // & > * {
-    //   // flex: 1 0 calc(93% / 4);
-    // }
-
     .blog {
       line-height: 1.3rem;
       img {

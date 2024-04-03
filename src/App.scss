@@ -3,6 +3,12 @@
 @import "slick-carousel/slick/slick-theme.css";
 @import "bootstrap.scss";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 // COLORS
 :root {
   --color-131921: #131921;

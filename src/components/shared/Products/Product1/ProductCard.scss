@@ -1,6 +1,6 @@
 .product-card {
   background-color: white;
-  // padding: 1rem;
+  padding: 1rem !important; // override bootstrap padding
   position: relative;
   overflow: hidden;
 

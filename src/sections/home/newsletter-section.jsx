@@ -7,9 +7,12 @@ const NewsletterSection = () => {
     <section className="newsletter-section">
       <h3>Newsletter Blogs</h3>
 
-      <div className="blogs">
+      <div className="blogs row mx-0">
         {blogs.map((blog, index) => (
-          <div className="blog" key={index}>
+          <div
+            className="blog flex-grow-1 col-12 col-sm-6 col-md-4 col-lg-3"
+            key={index}
+          >
             <div className="blog-image">
               <img src={blog.image} alt={`blog-${index}`} />
             </div>

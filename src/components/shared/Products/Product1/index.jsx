@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 
 import "./ProductCard.scss";
 
-const Product1 = ({ product }) => {
+const Product1 = ({ product, className }) => {
   const price = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(product.price - product.price * (product.discount / 100));
   return (
-    <div className="product-card">
+    <div className={`product-card ${className || ""}`}>
       <div className="product-image">
         <img src={product.image} alt={product.name} />
       </div>

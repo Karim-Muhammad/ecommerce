@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./SpecialCard.scss";
 const SpecialCard = (props) => {
   return (
-    <div className="special-card">
+    <div className={`special-card ${props.className || ""}`}>
       <div className="card-image">
         <Link to="/product/1">
           <img src={props.image} alt={props.title} />

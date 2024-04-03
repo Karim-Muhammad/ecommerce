@@ -5,7 +5,7 @@ import { Countdown } from "components/shared";
 
 import "./Product3.scss";
 import { Link } from "react-router-dom";
-export default function Product3({ product }) {
+export default function Product3({ product, className }) {
   const [love, setLove] = React.useState(false);
 
   const discount = (price, discount) => {
@@ -19,7 +19,7 @@ export default function Product3({ product }) {
 
   return (
     <>
-      <div className="product" key={product.id}>
+      <div className={`product ${className || ""}`} key={product.id}>
         <div className="product-images">
           <img
             src={`images/product${product.id + 1}.webp`}
