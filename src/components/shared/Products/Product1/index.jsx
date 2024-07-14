@@ -51,7 +51,7 @@ const Product1 = ({ product, className }) => {
             <BsArrowDownUp />
           </Link>
         </div>
-        <div className="product wishlist">
+        <div className="product-wishlist">
           <Link to="/wishlist">
             <BsFillSuitHeartFill />
           </Link>

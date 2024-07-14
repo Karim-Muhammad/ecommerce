@@ -11,7 +11,7 @@ const products = [
   {
     id: 1,
     name: "Soundcore By Anker R50i True Wireless Earbuds 10mm Drivers with Big Bass, Bluetooth 5.3, 30H Playtime, IPX5-Water Resistant, AI",
-    image: "/images/headphone2.avif",
+    image: "/images/iphone-square.jpg",
     price: 89000,
     discount: 30,
     rate: 3,
@@ -29,7 +29,7 @@ const products = [
   {
     id: 3,
     name: "mens ACTIV SPCIAL SPORT SHOES Sneaker",
-    image: "/images/shoes.webp",
+    image: "/images/iphone-square.jpg",
     price: 19900,
     discount: 50,
     rate: 2,
